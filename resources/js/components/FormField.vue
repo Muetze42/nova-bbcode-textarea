@@ -14,7 +14,7 @@
               :value="value"
               @input="handleChange"
           />
-            <span v-for="(code, title) in currentField.codes" :class="currentField.btnClass" :title="title" @submit.prevent="" @click="addCode(code)" :style="currentField.btnStyle">
+            <span v-for="(title, code) in currentField.codes" :class="currentField.btnClass" :title="title" @submit.prevent="" @click="addCode(code)" :style="currentField.btnStyle">
                 {{ code }}
             </span>
         </template>
