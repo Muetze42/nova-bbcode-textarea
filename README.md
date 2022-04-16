@@ -1,7 +1,9 @@
 # Nova Textarea with BBCodes
 Quickly developed. Short tutorial.  
 
-With this Nova field you have the _Textarea_ with _BBCodes_.
+With this Nova field you have the _Textarea_ with _BBCodes_.  
+
+(Tested with Nova 4)
 
 ## Install
 ```
