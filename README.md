@@ -5,6 +5,8 @@ With this Nova field you have the _Textarea_ or _Text_ with _BBCodes_.
 
 (Tested with Nova 4)
 
+![form](https://raw.githubusercontent.com/Muetze42/asset-repo/main/nova-bbcode-textarea/images/form.png "form")
+
 ## Install
 ```
 composer require norman-huth/nova-bbcode-textarea
