@@ -1,15 +1,22 @@
 {
     "name": "norman-huth/nova-bbcode-textarea",
-    "description": "Textarea with BBCodes. A Laravel Nova field.",
+    "description": "With this Nova field you have the Textarea or Text with BBCodes.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "larave-nova",
+        "nova-fields",
+        "nova-4"
     ],
     "homepage": "https://github.com/Muetze42/nova-bbcode-textarea",
+    "support": {
+        "issues": "https://github.com/Muetze42/nova-bbcode-textarea/issues",
+        "source": "https://github.com/Muetze42/nova-bbcode-textarea",
+        "docs": "https://github.com/Muetze42/nova-bbcode-textarea#readme"
+    },
     "authors": [
         {
             "name": "Norman Huth",
-            "email": "imprint-28847@huth.it",
             "homepage": "https://huth.it"
         }
     ],
