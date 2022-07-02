@@ -1,6 +1,6 @@
 {
     "name": "norman-huth/nova-bbcode-textarea",
-    "description": "Textarea with BBCodes. A Laravel Nova field.",
+    "description": "Laravel Nova Textarea and Text field with BBCodes",
     "keywords": [
         "laravel",
         "nova"
