@@ -1,7 +1,7 @@
-import FormField from './components/bbcode/FormField'
-import FormField2 from './components/bb/FormField'
+import DetailField from './components/DetailField'
+import FormField from './components/FormField'
 
 Nova.booting((app, store) => {
-    app.component('form-bbcode', FormField)
-    app.component('form-bb', FormField2)
+  app.component('detail-bbcode', DetailField)
+  app.component('form-bbcode', FormField)
 })

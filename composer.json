@@ -5,18 +5,22 @@
         "laravel",
         "nova"
     ],
+    "support": {
+        "issues": "https://github.com/Muetze42/nova-bbcode-textarea/issues",
+        "source": "https://github.com/Muetze42/nova-bbcode-textarea",
+        "docs": "https://github.com/Muetze42/nova-bbcode-textarea#readme"
+    },
     "homepage": "https://github.com/Muetze42/nova-bbcode-textarea",
     "authors": [
         {
             "name": "Norman Huth",
-            "email": "imprint-28847@huth.it",
             "homepage": "https://huth.it"
         }
     ],
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "laravel/nova": "^4.5.2"
+        "laravel/nova": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
