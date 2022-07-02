@@ -2,17 +2,11 @@
 
 namespace NormanHuth\BBCode;
 
-use Laravel\Nova\Fields\Textarea as Field;
+use Laravel\Nova\Fields\Text as Field;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class BBCode extends Field
+class BB extends Field
 {
-    /**
-     * Whether to always show the content for the field expanded or not.
-     *
-     * @var bool
-     */
-    public $alwaysShow = true;
-
     /**
      * The codes in key => value: code => title
      *
@@ -46,10 +40,10 @@ class BBCode extends Field
         }
 
         if (request()->input('editing')) {
-            return 'bbcode';
+            return 'bb';
         }
 
-        return 'textarea-field';
+        return 'text-field';
     }
 
     /**
@@ -59,18 +53,6 @@ class BBCode extends Field
     public function codes(array $codes): static
     {
         $this->codes = $codes;
-
-        return $this;
-    }
-
-    /**
-     * Always show the content of textarea fields inside Nova.
-     *
-     * @return $this
-     */
-    public function alwaysShow(bool $alwaysShow = true): static
-    {
-        $this->alwaysShow = $alwaysShow;
 
         return $this;
     }
@@ -108,12 +90,24 @@ class BBCode extends Field
      */
     public function jsonSerialize(): array
     {
+        $request = app(NovaRequest::class);
+
+        if ($request->isCreateOrAttachRequest()
+            || $request->isUpdateOrUpdateAttachedRequest()
+            || $request->isActionRequest() === true
+        ) {
+            return array_merge(parent::jsonSerialize(), [
+                'suggestions' => $this->resolveSuggestions($request),
+                'codes'       => $this->codes,
+                'btnStyle'    => $this->btnStyle,
+                'btnClass'    => $this->btnClass,
+            ]);
+        }
+
         return array_merge(parent::jsonSerialize(), [
-            'rows'       => $this->rows,
-            'shouldShow' => $this->shouldBeExpanded(),
-            'codes'      => $this->codes,
-            'btnStyle'   => $this->btnStyle,
-            'btnClass'   => $this->btnClass,
+            'codes'    => $this->codes,
+            'btnStyle' => $this->btnStyle,
+            'btnClass' => $this->btnClass,
         ]);
     }
 }

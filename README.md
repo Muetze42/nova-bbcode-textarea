@@ -1,7 +1,7 @@
-# Nova Textarea with BBCodes
+# Nova Textarea- & Text field with BBCodes
 Quickly developed. Short tutorial.  
 
-With this Nova field you have the _Textarea_ with _BBCodes_.  
+With this Nova field you have the _Textarea_ or _Text_ with _BBCodes_.  
 
 (Tested with Nova 4)
 
@@ -16,6 +16,16 @@ composer require norman-huth/nova-bbcode-textarea
 use NormanHuth\BBCode\BBCode;
 
 BBCode::make(__('Name'), 'name')->codes([
+    '{author}' => __('This code insert the author'),
+    '{date}' => __('This code insert the date'),
+]),
+```
+Or Text Field:
+```php
+
+use NormanHuth\BBCode\BB;
+
+BB::make(__('Name'), 'name')->codes([
     '{author}' => __('This code insert the author'),
     '{date}' => __('This code insert the date'),
 ]),
