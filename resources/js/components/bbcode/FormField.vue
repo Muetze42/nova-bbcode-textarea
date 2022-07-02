@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {DependentFormField, HandlesValidationErrors} from './../../mixins'
+import {DependentFormField, HandlesValidationErrors} from 'laravel-nova'
 
 export default {
     mixins: [HandlesValidationErrors, DependentFormField],
