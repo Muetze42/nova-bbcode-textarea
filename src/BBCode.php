@@ -7,13 +7,6 @@ use Laravel\Nova\Fields\Textarea as Field;
 class BBCode extends Field
 {
     /**
-     * Whether to always show the content for the field expanded or not.
-     *
-     * @var bool
-     */
-    public $alwaysShow = true;
-
-    /**
      * The codes in key => value: code => title
      *
      * @var array
@@ -34,23 +27,13 @@ class BBCode extends Field
      */
     protected string $btnStyle = '';
 
+
     /**
-     * Get the component name for the field.
+     * The field's component.
      *
-     * @return string
+     * @var string
      */
-    public function component(): string
-    {
-        if (isset(static::$customComponents[get_class($this)])) {
-            return static::$customComponents[get_class($this)];
-        }
-
-        if (request()->input('editing')) {
-            return 'bbcode';
-        }
-
-        return 'textarea-field';
-    }
+    public $component = 'bbcode';
 
     /**
      * @param array $codes

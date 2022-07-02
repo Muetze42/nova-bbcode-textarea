@@ -17,6 +17,7 @@ class FieldServiceProvider extends ServiceProvider
     {
         Nova::serving(function (ServingNova $event) {
             Nova::script('bbcode', __DIR__.'/../dist/js/field.js');
+            Nova::style('bbcode', __DIR__.'/../dist/css/field.css');
         });
     }
 
